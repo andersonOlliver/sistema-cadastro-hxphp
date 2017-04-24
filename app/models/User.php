@@ -82,7 +82,12 @@ class User extends \HXPHP\System\Model {
 		if(!is_null($user)){
 			$password = Tools::hashHX($post['password'], $user->salt);
 
-			if($user->status === 1){
+			$user->status =1;
+			$user->save();
+
+			var_dump($user->errors->get_raw_errors());
+
+			//if($user->status === 1){
 				if(LoginAttempt::existemTentativas($user->id)){
 
 					if($password['password'] === $user->password){
@@ -96,8 +101,8 @@ class User extends \HXPHP\System\Model {
 					$user->status = 0;
 					$user->save(false);
 				}
-			}
-			
+			//}
+
 		}
 
 	}
