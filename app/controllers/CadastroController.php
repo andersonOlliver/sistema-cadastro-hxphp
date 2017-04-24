@@ -16,7 +16,7 @@ class CadastroController extends \HXPHP\System\Controller
 			true
 		);
 
-		$this->auth->redirectCheck();
+		$this->auth->redirectCheck(true);
 	}
 
 	public function cadastrarAction(){
