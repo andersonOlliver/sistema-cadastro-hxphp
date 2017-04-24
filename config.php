@@ -6,8 +6,7 @@ $configs = new HXPHP\System\Configs\Config;
 $configs->env->add('development');
 $configs->env->development->baseURI = '/sistema/';
 
-$configs->env->development->database->setConnectionData(array(
-	'host' => 'localhost',
+$configs->env->development->database->setConnectionData(array('host' => 'localhost',
     'user' => 'root',
     'password' => '12345678',
     'dbname' => 'sistemahx',
@@ -19,8 +18,8 @@ $configs->env->development->auth->setURLs('/sistema/home/','/sistema/login/');
 $configs->env->add('production');
 $configs->env->production->baseURI = '/devStrong/sistema/';
 
-$configs->env->production->database->setConnectionData(array(
-	'host' => 'localhost',
+$configs->env->production->database->setConnectionData(array('host' => 'localhost',
+    'host' => 'localhost',
     'user' => 'devStrong',
     'password' => 'BQNDlK8t',
     'dbname' => 'devStrong',
