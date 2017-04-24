@@ -15,7 +15,7 @@ class LoginController extends \HXPHP\System\Controller {
 			true
 		);
 
-		$this->auth->redirectCheck(true);
+		$this->auth->redirectCheck();
 	}
 
 
@@ -25,7 +25,7 @@ class LoginController extends \HXPHP\System\Controller {
 		$post = $this->request->post();
 
 		if(!empty($post)){
-
+			User::login($post);
 		}
 	}
 }
