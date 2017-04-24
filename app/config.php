@@ -14,6 +14,6 @@ $configs->env->development->database->setConnectionData(array('host' => 'localho
     'charset' => 'utf8'
 ));
 
-$configs->env->development->auth->setURLs('sistema/home/','sistema/login/');
+$configs->env->development->auth->setURLs('/sistema/home/','/sistema/login/');
 
 return $configs;
