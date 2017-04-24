@@ -9,7 +9,7 @@ $configs->env->development->baseURI = '/sistema/';
 
 $configs->env->development->database->setConnectionData(array('host' => 'localhost',
     'user' => 'root',
-    'password' => '',
+    'password' => '12345678',
     'dbname' => 'sistemahx',
     'charset' => 'utf8'
 ));
