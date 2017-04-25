@@ -8,16 +8,13 @@
                 <?php echo (isset($this->menu) ? $this->menu : ''); ?>
             </div>
             <div class="panel-body">
-                <div class="alert alert-block alert-warning">
-                    <h4>Recupere sua senha</h4>
-                    Um link de redefinição será enviado para seu e-mail. Por favor, verifique a caixa de SPAM
-                </div>
-               <form class="form-horizontal">
+                <?php echo (isset($this->alert) ? $this->alert : '') ?>
+               <form action="<?php echo BASE; ?>recuperar/solicitar/" class="form-horizontal" method="post">
 
                     <div class="form-group">
-                        <label for="username" class="col-sm-3 control-label">Usuário:</label>
+                        <label for="email" class="col-sm-3 control-label">E-mail:</label>
                         <div class="col-sm-8">
-                          <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="email@dominio.com" value="<?php echo $this->request->post('email') ?>">
                         </div>
                     </div>
 
