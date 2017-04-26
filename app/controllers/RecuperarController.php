@@ -90,6 +90,7 @@ class RecuperarController extends \HXPHP\System\Controller
 
 
 	public function redefinirAction($token){
+		$validarToken = Recovery::validarToken($token);
 
 	}
 	
@@ -97,10 +98,4 @@ class RecuperarController extends \HXPHP\System\Controller
 
 	}
 
-	private function setEmail(){
-		$this->email->setFrom([
-		  'from' => 'Remetente',
-		  'from_mail' => 'email@remetente.com.br'
- ]);
-	}
 }
