@@ -96,4 +96,11 @@ class RecuperarController extends \HXPHP\System\Controller
 	public function alterarSenhaAction($token){
 
 	}
+
+	private function setEmail(){
+		$this->email->setFrom([
+		  'from' => 'Remetente',
+		  'from_mail' => 'email@remetente.com.br'
+ ]);
+	}
 }

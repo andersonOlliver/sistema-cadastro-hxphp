@@ -16,7 +16,9 @@ $configs->env->development->database->setConnectionData(array(
 
 $configs->env->development->auth->setURLs('/sistema/home/','/sistema/login/');
 
-$configs->env->development->mail->setFrom([
+$configs->env->development->email = new \HXPHP\System\Configs\Modules\Mail();
+
+$configs->env->development->email->setFrom([
   'from' => 'Remetente',
   'from_mail' => 'email@remetente.com.br'
  ]);
