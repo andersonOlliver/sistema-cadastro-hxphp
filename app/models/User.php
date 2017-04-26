@@ -1,8 +1,9 @@
 <?php
 
 use \HXPHP\System\Tools;
+use \HXPHP\System\Model;
 
-class User extends \HXPHP\System\Model
+class User extends Model
 {
 
     static $validates_presence_of = array(
@@ -38,7 +39,6 @@ class User extends \HXPHP\System\Model
 
     public static function cadastrar(array $post)
     {
-
         $callBackObj = new \stdClass;
         $callBackObj->user = null;
         $callBackObj->status = false;
@@ -125,5 +125,17 @@ class User extends \HXPHP\System\Model
         }
 
         return $callBackObj;
+    }
+
+    public static function atualizarSenha($user, $newPassword)
+    {
+        $user = self::find_by_id($user->id);
+
+        $password = Tools::hashHX($newPassword);
+
+        $user->password = $password['password'];
+        $user->salt = $password['salt'];
+
+        return $user->save(false);
     }
 }

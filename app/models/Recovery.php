@@ -1,6 +1,8 @@
 <?php
 
-class Recovery extends \HXPHP\System\Model
+use \HXPHP\System\Model;
+
+class Recovery extends Model
 {
 
     static $belongs_to = array(
@@ -23,7 +25,7 @@ class Recovery extends \HXPHP\System\Model
 
             self::delete_all(array(
                 'conditions' => array(
-                    'users_id = ?',
+                    'user_id = ?',
                     $user_exists->id
                 )
             ));
@@ -43,6 +45,7 @@ class Recovery extends \HXPHP\System\Model
 
         $validar = self::find_by_token($token);
 
+
         if (!is_null($validar)) {
             $callBackObj->status = true;
             $callBackObj->user = $validar->user;
@@ -51,5 +54,14 @@ class Recovery extends \HXPHP\System\Model
         }
 
         return $callBackObj;
+    }
+
+    public static function limpar($user_id){
+        return self::delete_all(array(
+            'conditions' => array(
+                'user_id = ?',
+                $user_id
+            )
+        ));
     }
 }

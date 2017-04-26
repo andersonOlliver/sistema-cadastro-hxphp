@@ -1,9 +1,10 @@
 <?php
 
+use \HXPHP\System\Controller;
 /**
  *
  */
-class RecuperarController extends \HXPHP\System\Controller
+class RecuperarController extends Controller
 {
     public function __construct($configs)
     {
@@ -116,7 +117,38 @@ class RecuperarController extends \HXPHP\System\Controller
 
     public function alterarSenhaAction($token)
     {
+        $this->view->setFile('redefinir');
+        $this->view->setTitle("Sistema - Altere sua senha");
+        $validarToken = Recovery::validarToken($token);
 
+        $error = null;
+
+        if ($validarToken->status === false) {
+            $this->view->setFile('blank');
+            $error = $this->messages->getByCode($validarToken->code);
+        } else {
+            $this->view->setVar('token', $token);
+            $password = $this->request->post('password');
+
+            if (!is_null($password )) {
+                $atualizarSenha = User::atualizarSenha($validarToken->user, $password);
+
+                if ($atualizarSenha === true) {
+
+                    Recovery::limpar($validarToken->user->id);
+                    $this->view->setPath('login')
+                        ->setFile('index');
+
+                    $sucesso = $this->messages->getByCode('senha-redefinida');
+
+                    $this->load('Helpers\Alert', $sucesso);
+                }
+            }
+        }
+
+        if (!is_null($error)) {
+            $this->load('Helpers\Alert', $error);
+        }
     }
 
 }
