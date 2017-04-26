@@ -20,4 +20,10 @@ class HomeController extends Controller
         $this->view->setTitle('Administrativo')
             ->setVar('user', User::find($user_id));
     }
+
+    public function bloqueadaAction(){
+        $this->auth->roleCheck(array(
+           'administrador'
+        ));
+    }
 }
