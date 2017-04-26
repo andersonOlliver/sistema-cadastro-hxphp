@@ -5,6 +5,9 @@ use \HXPHP\System\Model;
 
 class User extends Model
 {
+    static $belongs_to = array(
+        array('role')
+    );
 
     static $validates_presence_of = array(
         array(
