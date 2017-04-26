@@ -1,5 +1,7 @@
 <?php
-class IndexController extends \HXPHP\System\Controller
+use \HXPHP\System\Controller;
+
+class IndexController extends Controller
 {
 
 }
