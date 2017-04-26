@@ -14,5 +14,10 @@ class HomeController extends Controller
         );
 
         $this->auth->redirectCheck();
+
+        $user_id = $this->auth->getUserId();
+
+        $this->view->setTitle('Administrativo')
+            ->setVar('user', User::find($user_id));
     }
 }
