@@ -1,11 +1,11 @@
 body{
-    background: #081E2D;
+    background-color: #fff;
     color: #fff;
 }
 .panel.panel-custom{
     cursor: pointer;
     background-clip: content-box;
-    border:2px dashed #0071BF;
+    border:none;
     margin-top: 20%;
 }
 .panel.panel-custom:hover{

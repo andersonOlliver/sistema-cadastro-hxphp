@@ -15,6 +15,13 @@ $configs->env->development->database->setConnectionData(array('host' => 'localho
 
 $configs->env->development->auth->setURLs('/sistema/home/','/sistema/login/');
 
+
+$configs->env->development->email->setFrom([
+  'from' => 'Remetente',
+  'from_mail' => 'email@remetente.com.br'
+ ]);
+
+
 $configs->env->add('production');
 $configs->env->production->baseURI = '/devStrong/sistema/';
 

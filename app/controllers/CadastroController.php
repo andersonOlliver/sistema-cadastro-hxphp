@@ -27,6 +27,7 @@ class CadastroController extends \HXPHP\System\Controller
 			));
 
 		$post = $this->request->post();
+		
 
 		if(!empty($post)){
 			$cadastrarUsuario = User::cadastrar($post);

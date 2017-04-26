@@ -2,10 +2,13 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <meta name="author" content="Bruno C. Santos">
-        <meta name="generator" content="HXPHP Framework">
+        <meta name="author" content="Anderson Olliver">
+        <meta name="generator" content="Integral Seg">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title><?php echo $view_title; ?></title>
+
         <link rel="shortcut icon" href="<?php echo IMG; ?>favicon.jpg" type="image/x-icon">
         <link rel="stylesheet" href="<?php echo BOWER; ?>bootstrap/dist/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="<?php echo BOWER; ?>font-awesome/css/font-awesome.min.css" type="text/css">
@@ -16,4 +19,5 @@
         ?>
     </head>
     <body>
+        <?php @include('menu.php') ?>
         <div class="container">
