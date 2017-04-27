@@ -23,7 +23,8 @@ class HomeController extends Controller
 
     public function bloqueadaAction(){
         $this->auth->roleCheck(array(
-           'administrador'
+           'administrador',
+            'user'
         ));
     }
 }

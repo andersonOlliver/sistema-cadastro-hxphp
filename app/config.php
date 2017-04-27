@@ -16,6 +16,19 @@ $configs->env->development->database->setConnectionData(array(
 
 $configs->env->development->auth->setURLs('/sistema/home/','/sistema/login/');
 
+$configs->env->development->menu->setMenus(array(
+    'Home/dashboard' => '%baseURI%/home',
+    'Link/user' => 'http://www.google.com',
+    'Submenus/cog' => array(
+        'Painel/dashboard' => '%baseURI%/home',
+        'Atualizações/hand-o-up' => '%baseURI%/atualizacoes'
+    )
+),'user');
+
+$configs->env->development->menu->setMenus(array(
+    'Home/dashboard' => '%baseURI%/home'
+));
+
 $configs->env->development->email = new \HXPHP\System\Configs\Modules\Mail();
 
 $configs->env->development->email->setFrom([
