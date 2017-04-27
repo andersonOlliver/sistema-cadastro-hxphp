@@ -15,6 +15,13 @@ class HomeController extends Controller
 
         $this->auth->redirectCheck();
 
+        $this->load(
+            'Helpers\Menu',
+            $this->request,
+            $this->configs,
+            $this->auth->getUserRole()
+        );
+
         $user_id = $this->auth->getUserId();
 
         $this->view->setTitle('Administrativo')

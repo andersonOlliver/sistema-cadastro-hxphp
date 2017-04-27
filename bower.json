@@ -1,12 +1,12 @@
 {
-    "name": "hxphp",
+    "name": "Site Integral",
     "description": "",
     "main": "",
     "authors": [
-        "Bruno C. Santos <bruno@plug.ag>"
+        "Anderson Olliver"
     ],
     "license": "MIT",
-    "homepage": "http://www.hxphp.com.br",
+    "homepage": "http://www.integralseg.com.br/",
     "ignore": [
         "**/.*",
         "node_modules",
