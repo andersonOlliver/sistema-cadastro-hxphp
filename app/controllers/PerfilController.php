@@ -39,6 +39,7 @@ class PerfilController extends \HXPHP\System\Controller
 
     public function atualizarAction()
     {
+        $this->view->setFile('editar');
         $user_id = $this->auth->getUserId();
 
         $this->request->setCustomFilters(array(
@@ -48,22 +49,23 @@ class PerfilController extends \HXPHP\System\Controller
         $post = $this->request->post();
 
 
-        if(!empty($post)){
+        if (!empty($post)) {
             $atualizarUsuario = User::atualizar($user_id, $post);
 
-            if($atualizarUsuario->status === false){
+            if ($atualizarUsuario->status === false) {
                 $this->load('Helpers\Alert', array(
                     'danger',
                     'Oops! Não foi possível atualizar seu perfil. <br>
                         Verifique os erros abaixo',
                     $atualizarUsuario->errors
                 ));
-            }else{
+            } else {
+                $this->view->setVar('user', $atualizarUsuario->user);
                 $this->load('Helpers\Alert', array(
-                   'success',
+                    'success',
                     'Uhuul! Perfil atualizado com sucesso!'
                 ));
-                $this->auth->login($atualizarUsuario->user-id, $atualizarUsuario->user->username);
+                $this->auth->login($atualizarUsuario->user - id, $atualizarUsuario->user->username);
             }
         }
 
