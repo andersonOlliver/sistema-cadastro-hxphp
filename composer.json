@@ -1,12 +1,13 @@
 {
     "name": "Site/integral",
     "require": {
-        "php-activerecord/php-activerecord": "dev-master"
+        "php-activerecord/php-activerecord": "dev-master",
+        "avbdr/php-bootstrap-form": "dev-master"
     },
     "authors": [
         {
             "name": "Anderson Olliver",
-            "email": "pla.olliver@gmailcom"
+            "email": "pla.olliver@gmail.com"
         },
         {
             "name": "Lucas Giraldeli",
