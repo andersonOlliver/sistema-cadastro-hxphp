@@ -2,7 +2,11 @@
     <?php
         echo(isset($this->alert) ? $this->alert : '');
 
-        $values = [];
+        $values = [
+            'name' => $view_user->name,
+            'username' => $view_user->username,
+            'email' => $view_user->email
+        ];
         Form::open('editarusuario', $values, [
             'action' => BASE .'perfil/atualizar/',
             'prevent' => [
