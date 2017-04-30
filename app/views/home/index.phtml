@@ -1,17 +1,9 @@
-<?php echo isset($this->menu) ? $this->menu->getMenu() : ''; ?>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-custom">
-            <h2>Você está em home</h2>
-            <div class="panel-body">
+<div class="panel-body">
 
-                <h4 class="alert alert-success">
-                    Uruuhhhhh Você foi autenticado com sucesso.
-                </h4>
+    <h4 class="alert alert-success">
+        Uruuhhhhh Você foi autenticado com sucesso.
+    </h4>
 
-                Olá <?php echo $view_user->name; ?> seja bem vindo(a) <br/>
-                <a href="<?php echo BASE .'login/sair'; ?>" class="btn btn-danger">Sair</a>
-            </div>
-        </div>
-    </div>
+    Olá <?php echo $view_user->name; ?> seja bem vindo(a) <br/>
+    <a href="<?php echo BASE . 'login/sair'; ?>" class="btn btn-danger">Sair</a>
 </div>
